@@ -27,7 +27,7 @@ print(torch.__version__)
 
 nr,nc = 256,256
 a = 3
-extent = ((-a-0.5/nc, a-0.5/nc, a-0.5/nr, -a-0.5/nr))
+extent = ((-a-0.5/nc, a-0.5/nc, -a-0.5/nr, a-0.5/nr))
 xs = np.linspace(-a, a, nr)
 ys = np.linspace(-a, a, nc)
 xm, ym = np.meshgrid(xs, ys, indexing='ij')
@@ -68,7 +68,7 @@ print(x.grad)
 # In[ ]:
 
 
-x0 = np.array([-1.5,0.8])   # initial point
+x0 = np.array([-1.8,2])   # initial point
 
 tau = .1
 N = 1000
