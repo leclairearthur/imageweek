@@ -28,7 +28,7 @@ print(torch.__version__)
 nr,nc = 256,256
 a = 3
 extent = ((-a-0.5/nc, a-0.5/nc, -a-0.5/nr, a-0.5/nr))
-xs = np.linspace(-a, a, nr)
+xs = np.linspace(a, -a, nr)
 ys = np.linspace(-a, a, nc)
 xm, ym = np.meshgrid(xs, ys, indexing='ij')
 xm = xm.T
@@ -40,8 +40,6 @@ y = xm**2 + ym**2 - np.sin(xm*2)*ym
 #   y = 2*ym**2-np.cos(xm*3)*ym + 2*xm**2 
 
 fig = plt.figure(dpi=150)
-plt.xticks([])
-plt.yticks([])
 plt.imshow(y,cmap = 'gray', extent=extent)
 plt.show()
 
